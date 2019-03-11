@@ -5,7 +5,7 @@ User can add their daliy task in this ToDo Web App and get Reminder by mail
 Postgres
 
 # APIs
-It have Five APIs for Get, Create, Update and Delete #
+It have Five APIs for Get, Create, Update and Delete
 #### List of ToDo
 GET http://localhost:8004/todo-api/username/list
 #### Detail of ToDo
