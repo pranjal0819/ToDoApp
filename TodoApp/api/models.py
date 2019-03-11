@@ -1,7 +1,6 @@
 from django.db import models
 
 
-# Create your models here.
 class TodoData(models.Model):
     title = models.CharField(max_length=205)
     message = models.TextField(max_length=1005)
