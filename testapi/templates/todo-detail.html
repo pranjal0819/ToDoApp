@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <title>ToDo</title>
+</head>
+<body>
+<div class="container my-5">
+    <h2 class="text-center">My ToDo</h2>
+    <a href="/">To Do List</a>
+    <form method="post" class="border">{% csrf_token %}
+        <div class="col-md-6">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title" name="title" placeholder="Title" value="{{ todo.title }}">
+        </div>
+        <div class="col-md-6">
+            <label for="message">Message</label>
+            <textarea class="form-control" id="message" name="message" placeholder="Message">{{ todo.message }}</textarea>
+        </div>
+        <div class="col-md-6">
+            <label for="time">Time</label>
+            <input type="text" class="form-control" id="time" name="time" placeholder="Time" value="{{ todo.time }}">
+        </div>
+        <div>
+            <label for="complete">Complete</label>
+            <input type="checkbox" class="" id="complete" name="complete" value="{{ todo.complete }}">
+        </div>
+        <button class="btn btn-outline-success">Save</button>
+    </form>
+</div>
+{% for m in messages %}
+    <script type="text/javascript">alert("{{ m }}");</script>{% endfor %}
+</body>
+</html>

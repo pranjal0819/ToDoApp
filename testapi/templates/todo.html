@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <title>ToDo</title>
+</head>
+<body>
+<div class="container my-5">
+    <h2 class="text-center">My ToDo List</h2>
+    <a href="todo/add">Add To Do</a>
+    <table class="table table-bordered table-hover" id="myTable">
+        <thead>
+        <tr style="font-weight: 600;">
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Time</th>
+            <th scope="col">Status</th>
+            <th scope="col">Detail</th>
+            <th scope="col">Update</th>
+            <th scope="col">Delete</th>
+        </tr>
+        </thead>
+        <tbody>{% for list in todo_list %}
+            <tr>
+                <td scope="row" style="text-align: center; vertical-align: middle;">{{ forloop.counter }}</td>
+                <td>{{ list.title }}</td>
+                <td>{{ list.time }}</td>
+                <td>{% if list.complete %}Completed{% else %}Incomplete{% endif %}</td>
+                <td><a href="/todo/detail/{{ list.id }}">Detail</a></td>
+                <td><a href="/todo/detail/{{ list.id }}">Edit</a></td>
+                <td><a href="/todo/delete/{{ list.id }}">Delete</a></td>
+            </tr>{% endfor %}</tbody>
+    </table>
+</div>
+{% for m in messages %}
+    <script type="text/javascript">alert("{{ m }}");</script>{% endfor %}
+</body>
+</html>
